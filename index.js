@@ -1,5 +1,11 @@
 /**
  * @file mouseout.js
+ * @author simpart
+ */
+
+/**
+ * @class event.MouseOut
+ * @brief mouse out event for mofron component
  */
 mofron.event.MouseOut = class extends mofron.Event {
     
