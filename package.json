@@ -1,0 +1,29 @@
+{
+  "name": "mofron-event-mouseout",
+  "version": "0.3.3",
+  "description": "mouse out event",
+  "main": "dist/mouseout.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simpart/mofron-event-mouseout.git"
+  },
+  "keywords": [
+    "mofron"
+  ],
+  "author": "simparts",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/simpart/mofron-event-mouseout/issues"
+  },
+  "homepage": "https://github.com/simpart/mofron-event-mouseout#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "webpack": "^2.2.1"
+  }
+}
