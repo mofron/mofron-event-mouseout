@@ -1,6 +1,6 @@
 {
   "name": "mofron-event-mouseout",
-  "version": "0.3.4",
+  "version": "0.4.1",
   "description": "mouse out event for moforn component",
   "main": "index.js",
   "dependencies": {},

@@ -9,15 +9,27 @@
  */
 mofron.event.MouseOut = class extends mofron.Event {
     
-    eventConts () {
+    constructor (fnc, prm) {
         try {
-            var cbf = this.func;
-            var cbp = this.parm;
-            
-            this.target.getRawDom().addEventListener('mouseout',function() {
+            super();
+            this.name('MouseOut');
+            this.prmOpt(
+                ('function' === typeof fnc) ?
+                {'handler' : new mofron.Param(fnc, prm)} : fnc
+            );
+        } catch (e) {
+            console.error(e.stack);
+            throw e;
+        }
+    }
+    
+    eventConts (tgt_dom) {
+        try {
+            var evt_func = this.handler();
+            tgt_dom.getRawDom().addEventListener('mouseout',function() {
                 try {
-                    if (null != cbf) {
-                        cbf(cbp);
+                    if (null != evt_func[0]) {
+                        evt_func[0](evt_func[1]);
                     }
                 } catch (e) {
                     console.error(e.stack);
@@ -30,3 +42,4 @@ mofron.event.MouseOut = class extends mofron.Event {
         }
     }
 }
+module.exports = mofron.event.MouseOut;
