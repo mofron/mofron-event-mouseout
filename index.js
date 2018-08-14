@@ -2,18 +2,19 @@
  * @file mouseout.js
  * @author simpart
  */
+const mf = require('mofron');
 
 /**
  * @class event.MouseOut
  * @brief mouse out event for mofron component
  */
-mofron.event.MouseOut = class extends mofron.Event {
+mf.event.MouseOut = class extends mf.Event {
     
     constructor (po, p1) {
         try {
             super();
             this.name('MouseOut');
-            this.prmMap('handler', 'handlerPrm');
+            this.prmMap('handler');
             this.prmOpt(po, p1);
         } catch (e) {
             console.error(e.stack);
@@ -23,16 +24,11 @@ mofron.event.MouseOut = class extends mofron.Event {
     
     contents (tgt_dom) {
         try {
-            let evt_func = this.handler();
-            let evt_cmp  = this.component();
+            let evt_obj = this;
             tgt_dom.getRawDom().addEventListener(
                 'mouseout',
-                () => {
-                    try {
-                        if (null != evt_func[0]) {
-                            evt_func[0](evt_cmp, evt_func[1]);
-                        }
-                    } catch (e) {
+                () => { 
+                    try { evt_obj.execHandler(); } catch (e) {
                         console.error(e.stack);
                         throw e;
                     }
@@ -45,5 +41,5 @@ mofron.event.MouseOut = class extends mofron.Event {
         }
     }
 }
-module.exports = mofron.event.MouseOut;
+module.exports = mf.event.MouseOut;
 /* end of file */
