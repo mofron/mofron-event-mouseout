@@ -10,12 +10,12 @@ const mf = require('mofron');
  */
 mf.event.MouseOut = class extends mf.Event {
     
-    constructor (po, p1) {
+    constructor (po) {
         try {
             super();
             this.name('MouseOut');
             this.prmMap('handler');
-            this.prmOpt(po, p1);
+            this.prmOpt(po);
         } catch (e) {
             console.error(e.stack);
             throw e;
