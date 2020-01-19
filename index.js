@@ -1,34 +1,50 @@
 /**
- * @file mouseout.js
- * @author simpart
+ * @file mofron-event-mouseout/index.js
+ * @brief mouse-out event for mofron
+ *        this event notifies when the mouse out on the component.
+ * ## event function parameter
+ *  - component: event target component object
+ *  - event: "mouseout" event object by addEventListener
+ *  - mixed: user specified parameter
+ * @license MIT
  */
-const mf = require('mofron');
 
-/**
- * @class event.MouseOut
- * @brief mouse out event for mofron component
- */
-mf.event.MouseOut = class extends mf.Event {
-    
-    constructor (po) {
+module.exports = class extends mofron.class.Event {
+    /**
+     * initialize event
+     * 
+     * @param (mixed) short-form parameter
+     *                key-value: event config
+     * @type private
+     */
+    constructor (prm) {
         try {
             super();
             this.name('MouseOut');
-            this.prmMap('handler');
-            this.prmOpt(po);
+	    if (undefined !== prm) {
+                this.config(prm);
+            }
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
-    
+
+    /**
+     * event contents
+     * 
+     * @param (mofron.class.dom) target dom object
+     * @type private
+     */
     contents (tgt_dom) {
         try {
             let evt_obj = this;
             tgt_dom.getRawDom().addEventListener(
                 'mouseout',
                 () => { 
-                    try { evt_obj.execHandler(); } catch (e) {
+                    try {
+		        evt_obj.execListener();
+	            } catch (e) {
                         console.error(e.stack);
                         throw e;
                     }
@@ -41,5 +57,4 @@ mf.event.MouseOut = class extends mf.Event {
         }
     }
 }
-module.exports = mf.event.MouseOut;
 /* end of file */

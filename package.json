@@ -1,6 +1,6 @@
 {
   "name": "mofron-event-mouseout",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "mouse out event for moforn component",
   "main": "index.js",
   "dependencies": {},
@@ -9,17 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simpart/mofron-event-mouseout.git"
+    "url": "git+https://github.com/mofron/mofron-event-mouseout.git"
   },
   "keywords": [
-    "mofron"
+    "mofron", "fron-end"
   ],
   "author": "simparts",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/simpart/mofron-event-mouseout/issues"
+    "url": "https://github.com/mofron/mofron-event-mouseout/issues"
   },
-  "homepage": "https://github.com/simpart/mofron-event-mouseout#readme",
+  "homepage": "https://github.com/mofron/mofron-event-mouseout#readme",
   "devDependencies": {
   }
 }
