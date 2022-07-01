@@ -20,7 +20,7 @@ module.exports = class extends mofron.class.Event {
     constructor (prm) {
         try {
             super();
-            this.name('MouseOut');
+            this.modname('MouseOut');
 	    if (undefined !== prm) {
                 this.config(prm);
             }
